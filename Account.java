@@ -1,35 +1,43 @@
-public class Account {
+package com.example.accountbuilder;
 
-    private String login;
-    private String password;
-    private String email;
+import java.util.Objects;
 
-    public static Registrar initializeRegistrar() {
-        return new Account().new Registrar();
+public final class Account {
+    private final String login;
+    private final String password;
+    private final String email;
+
+    Account(String login, String password, String email) {
+        this.login = login;
+        this.password = password;
+        this.email = email;
     }
 
-    public class Registrar {
+    public String getLogin() { return login; }
+    public String getPassword() { return password; }
+    public String getEmail() { return email; }
 
-        public Registrar login(String login) {
-            System.out.println("Login " + login);
-            Account.this.login = login;
-            return this;
-        }
+    @Override
+    public String toString() {
+        return "Account{" +
+                "login='" + login + '\'' +
+                ", email='" + email + '\'' +
+                ", password='***REDACTED***'" +
+                '}';
+    }
 
-        public Registrar password(String password) {
-            System.out.println("Password " + password);
-            Account.this.password = password;
-            return this;
-        }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Account)) return false;
+        Account account = (Account) o;
+        return Objects.equals(login, account.login) &&
+                Objects.equals(password, account.password) &&
+                Objects.equals(email, account.email);
+    }
 
-        public Registrar email(String email) {
-            System.out.println("Email " + email);
-            Account.this.email = email;
-            return this;
-        }
-
-        public Account createAccount() {
-            return Account.this;
-        }
+    @Override
+    public int hashCode() {
+        return Objects.hash(login, password, email);
     }
 }
