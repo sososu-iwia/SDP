@@ -1,5 +1,3 @@
-package com.example.accountbuilder;
-
 import java.util.Objects;
 
 public final class Account {
