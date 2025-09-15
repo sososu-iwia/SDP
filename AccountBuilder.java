@@ -1,4 +1,4 @@
-package com.example.accountbuilder;
+
 
 public interface AccountBuilder {
     AccountBuilder login(String login);
