@@ -1,4 +1,3 @@
-package com.example.accountbuilder;
 
 public class DefaultPasswordPolicy implements PasswordPolicy {
     private static final int MIN_LENGTH = 6;
