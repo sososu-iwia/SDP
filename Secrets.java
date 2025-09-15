@@ -1,5 +1,3 @@
-package com.example.accountbuilder;
-
 import java.io.Console;
 import java.util.Scanner;
 
